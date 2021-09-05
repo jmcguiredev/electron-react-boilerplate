@@ -7,11 +7,13 @@
     "dev": "webpack --env environment=development --config webpack.config.js",
     "build": "webpack --env environment=production --config webpack.config.js",
     "devserver": "webpack-dev-server --env environment=development --config webpack.config.js",
-    "electron-start": "electron ."
+    "electron-start": "electron .",
+    "dev-start": "concurrently \"npm run devserver\" \"npm run electron-start\""
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "concurrently": "^6.2.1",
     "core-js": "^3.16.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
