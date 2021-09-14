@@ -14,13 +14,20 @@ function createWindow() {
 }
 
 app.whenReady().then(() => {
+    let reactDevToolsPath;
+
+    if (process.platform === 'linux') {
+        reactDevToolsPath = "/home/.config/google-chrome/Default/Extensions";
+    }
+
     createWindow();
 
     app.on('activate', function () {
         if (BrowserWindow.getAllWindows().length === 0) createWindow();
-    })
+    });
 });
 
 app.on('window-all-closed', function () {
+    
     if (process.platform !== 'darwin') app.quit();
   })
