@@ -1,5 +1,12 @@
-const { app, BrowserWindow } = require('electron');
+const { app, session, BrowserWindow } = require('electron');
 const path = require('path');
+const os = require('os');
+
+let reactDevToolsPath = os.homedir();
+    switch(process.platform) {
+        case 'linux':
+            reactDevToolsPath = path.join(reactDevToolsPath, "/.config/google-chrome/Default/Extensions/fmkadmapgofadopljbjfkapdkoienihi/4.18.0_0/");
+    }
 
 function createWindow() {
     const window = new BrowserWindow({
@@ -9,17 +16,15 @@ function createWindow() {
             preload: path.join(__dirname, 'preload.js')
         }
     });
-
-    window.loadURL('http://localhost:8080');
+    setTimeout(() => {
+        window.loadURL('http://localhost:8080');
+    }, 2000);
 }
 
-app.whenReady().then(() => {
-    let reactDevToolsPath;
-
-    if (process.platform === 'linux') {
-        reactDevToolsPath = "/home/.config/google-chrome/Default/Extensions";
-    }
-
+app.whenReady().then(async () => {
+    
+    await session.defaultSession.loadExtension(reactDevToolsPath);
+    
     createWindow();
 
     app.on('activate', function () {

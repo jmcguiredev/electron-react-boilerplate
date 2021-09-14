@@ -6,7 +6,7 @@ const PATH_SOURCE = path.join(__dirname, './src');
 const PATH_DIST = path.join(__dirname, './dist');
 
 module.exports = env => {
-    console.log('Environment:', env.environment);
+    console.log('Environment:', __dirname);
 
     const environment = env.environment;
     const isProduction = environment === 'production';
