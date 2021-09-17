@@ -15,7 +15,7 @@ module.exports = env => {
     return {
         mode: environment,
         resolve: {
-            extensions: ['.js', '.jsx']
+            extensions: ['.js', '.jsx', '.ts', '.tsx']
         },
         devServer: {
             host: 'localhost',
@@ -24,7 +24,7 @@ module.exports = env => {
         },
 
         entry: [
-            path.join(PATH_SOURCE, './index.js'),
+            path.join(PATH_SOURCE, './index.tsx'),
         ],
 
         output: {
@@ -46,7 +46,8 @@ module.exports = env => {
                                     useBuiltIns: 'usage',
                                     corejs: 3
                                 }],
-                                '@babel/preset-react'
+                                '@babel/preset-react',
+                                '@babel/preset-typescript'
                             ]
                         }
                     }
