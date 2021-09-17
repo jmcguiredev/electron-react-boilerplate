@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
+import ReactLogo from './assets/reactlogo.svg';
 
 interface AppProps {
 
 }
 
-const App = () => {
+const App = ({}: AppProps) => {
     return (
         <div id="app">
             <h1>Hello World!</h1>
+            <img src={ReactLogo}/>
         </div>
     );
 }
