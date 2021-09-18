@@ -7,7 +7,6 @@
 }
 
 @keyframes rotate {
-    
     100% {
         transform: rotate(360deg);
     }
@@ -21,14 +20,10 @@ body, #root, #app, .intro-container {
 .app-icon {
     height: 50vh;
     width: 50vh;
-    animation: 5s infinite rotate;
+    animation: 8s infinite rotate;
     animation-timing-function: linear;
 }
 
 .intro {
     font-family: Arial, Helvetica, sans-serif;
-}
-
-.app-icon {
-
 }
