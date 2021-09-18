@@ -15,7 +15,7 @@ module.exports = env => {
     return {
         mode: environment,
         resolve: {
-            extensions: ['.js', '.jsx', '.ts', '.tsx']
+            extensions: ['.js', '.jsx', '.ts', '.tsx', 'css', 'scss']
         },
         devServer: {
             host: 'localhost',
@@ -62,6 +62,14 @@ module.exports = env => {
                         },
                       },
                     ],
+                  },
+                  {
+                      test: /\.(sass|scss)$/,
+                      use: [
+                          'style-loader',
+                          'css-loader',
+                          'sass-loader'
+                      ]
                   },
             ]
         },
