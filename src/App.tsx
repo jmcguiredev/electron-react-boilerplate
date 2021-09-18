@@ -12,8 +12,6 @@ const App = ({}: AppProps) => {
                 <h1 className="intro intro-heading">Welcome to your React Electron App</h1>
                 <img className="app-icon" src={ReactLogo}/>
             </div>
-            
-            
         </div>
     );
 }
