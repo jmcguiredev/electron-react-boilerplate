@@ -46,11 +46,10 @@ module.exports = env => {
                                     useBuiltIns: 'usage',
                                     corejs: 3
                                 }],
-                                '@babel/preset-react',
-                                '@babel/preset-typescript'
+                                '@babel/preset-react'
                             ]
                         }
-                    }
+                    },
                 },
                 {
                     test: /\.(png|jp(e*)g|svg|gif)$/,
