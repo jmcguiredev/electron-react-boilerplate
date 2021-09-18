@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ReactLogo from './assets/reactlogo.svg';
+import ReactLogo from './svgs/reactlogo.svg';
 
 interface AppProps {
 
