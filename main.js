@@ -23,7 +23,12 @@ function createWindow() {
 
 app.whenReady().then(async () => {
     
-    await session.defaultSession.loadExtension(reactDevToolsPath);
+    try {
+        await session.defaultSession.loadExtension(reactDevToolsPath);
+    } catch(err) {
+        console.log("Failed to load React Dev Tools Extension: ", err);
+    }
+    
     
     createWindow();
 
