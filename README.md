@@ -1,5 +1,8 @@
 # electron-react-boilerplate
 
+## Experimental
+This project was created to further my understanding of using Webpack, Babel, and React with Electron desktop apps.
+
 ## Build in Development Mode
 ``
 npm run dev
